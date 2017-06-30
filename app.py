@@ -22,6 +22,10 @@ def roomtemp():
     temperature = temperature * 9/5.0 + 32
     return render_template('roomtemp.html', current_time=str(current_time), temperature=format(temperature, '.2f'), humidity=format(humidity, '.2f'))
 
+@app.route('/templog')
+def templog():
+    return render_template('templog.html')
+
 @app.route('/hello/<name>')
 def hello(name):
     return render_template('page.html', name=name)

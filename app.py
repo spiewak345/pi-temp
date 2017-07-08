@@ -45,7 +45,7 @@ def roomtemp():
 @app.route('/templog')
 def templog():
     db = get_db()
-    cur = db.execute('select temperature, humidity, timestamp from roomtemp order by timestamp desc')
+    cur = db.execute('select temperature, humidity, timestamp from roomtemp order by timestamp desc limit 168')
     temps = cur.fetchall()
     return render_template('templog.html', temps=temps)
 

@@ -1,30 +1,23 @@
-<html>
-<head>
-    <title>Temp Log</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<div class="container">
-    <div class="jumbotron">
-        <h1>Temp Log</h1>
-    </div>
-    <table class=table>
-        <thead>
-        <tr>
-            <th>Temperature</th>
-            <th>Humidity</th>
-            <th>Timestamp</th>
-        </tr>
-        </thead>
-        {% for temp in temps %}
-        <tr>
-            <td>{{ temp.temperature }}</td>
-            <td>{{ temp.humidity }}</td>
-            <td>{{ temp.timestamp }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+{% extends "base.html" %}
+{% block title %}Temp Log{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Temp Log</h1>
 </div>
+<table class=table>
+  <thead>
+    <tr>
+      <th>Temperature</th>
+      <th>Humidity</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  {% for temp in temps %}
+    <tr>
+      <td>{{ temp.temperature }}</td>
+      <td>{{ temp.humidity }}</td>
+      <td>{{ temp.timestamp }}</td>
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}

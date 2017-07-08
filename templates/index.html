@@ -1,8 +1,6 @@
-<html>
-<head>
-<link rel="stylesheet" href='/static/style.css' />
-</head>
-<body>
-<h1>Hello from a template!</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title%}Pi Home{% endblock %}
+{% block body %}
+<br>
+<p>Hello there! Welcome to my raspberrypi/Flask playground.<p>
+{% endblock %}

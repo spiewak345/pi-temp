@@ -11,5 +11,20 @@
     <div class="jumbotron">
         <h1>Temp Log</h1>
     </div>
-    <p>Placeholder for showing temps form DB logged over time.</p>
+    <table class=table>
+        <thead>
+        <tr>
+            <th>Temperature</th>
+            <th>Humidity</th>
+            <th>Timestamp</th>
+        </tr>
+        </thead>
+        {% for temp in temps %}
+        <tr>
+            <td>{{ temp.temperature }}</td>
+            <td>{{ temp.humidity }}</td>
+            <td>{{ temp.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>

@@ -49,6 +49,18 @@ def templog():
     temps = cur.fetchall()
     return render_template('templog.html', temps=temps)
 
+@app.route('/tempchart')
+def chart():
+    db = get_db()
+    cur = db.execute('select temperature, timestamp from roomtemp order by timestamp desc limit 24')
+    temps = cur.fetchall()
+    temperatures = []
+    timestamps = []
+    for temp in temps:
+        temperatures.append(temp[0])
+        timestamps.append(temp[1])
+    return render_template('tempchart.html', values=temperatures, labels=timestamps)
+
 @app.route('/hello/<name>')
 def hello(name):
     return render_template('page.html', name=name)

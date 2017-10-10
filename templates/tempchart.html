@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Temp Chart{% endblock %}
+{% block body %}
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -8,12 +11,7 @@
 	</script>
 </head>
 <body>
-	<h1>Flask Chart.js</h1><!-- bar chart canvas element -->
-    <p>Testing:
-    {% for item in values %}
-    "{{item}}"
-    {% endfor %}
-    </p>
+	<h1>Temp Chart with Chart.js</h1><!-- bar chart canvas element -->
 	<canvas height="400" id="chart" width="600"></canvas>
 	<script>
 
@@ -70,3 +68,4 @@
 	</script>
 </body>
 </html>
+{% endblock %}
